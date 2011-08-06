@@ -1,4 +1,10 @@
 Bartapper::Application.routes.draw do
+  resources :master_events
+
+  resources :participants
+
+  resources :venues
+
   resources :teams
 
   resources :games
