@@ -1,0 +1,33 @@
+<%= form_for(@master_event) do |f| %>
+  <% if @master_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@master_event.errors.count, "error") %> prohibited this master_event from being saved:</h2>
+
+      <ul>
+      <% @master_event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :sport_id %><br />
+    <%= f.text_field :sport_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

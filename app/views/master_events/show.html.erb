@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Time:</b>
+  <%= @master_event.time %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @master_event.date %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%= @master_event.sport_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @master_event.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_master_event_path(@master_event) %> |
+<%= link_to 'Back', master_events_path %>

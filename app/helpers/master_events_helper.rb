@@ -1,0 +1,2 @@
+module MasterEventsHelper
+end

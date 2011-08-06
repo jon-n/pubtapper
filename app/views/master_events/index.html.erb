@@ -1,0 +1,29 @@
+<h2>Master Event Manager</h2>
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Date</th>
+    <th>Sport</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @master_events.each do |master_event| %>
+  <tr>
+    <td><%= master_event.time %></td>
+    <td><%= master_event.date %></td>
+    <td><%= master_event.sport_id %></td>
+    <td><%= master_event.description %></td>
+    <td><%= link_to 'Show', master_event %></td>
+    <td><%= link_to 'Edit', edit_master_event_path(master_event) %></td>
+    <td><%= link_to 'Destroy', master_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Master event', new_master_event_path %>

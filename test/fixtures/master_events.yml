@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time: 2011-08-06 15:18:04
+  date: 2011-08-06
+  sport_id: 1
+  description: MyText
+
+two:
+  time: 2011-08-06 15:18:04
+  date: 2011-08-06
+  sport_id: 1
+  description: MyText

@@ -1,0 +1,40 @@
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+
+<h2>Games Happening Now</h2>
+
+<div id="map_canvas" style="width:800px; height:35em; margin-bottom:1em;">
+</div>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Venue</th>
+    <th>Sport</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<h3>Details</h3>
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.date %></td>
+    <td><%= game.time %></td>
+    <td><%= game.venue_id %></td>
+    <td><%= game.sport_id %></td>
+    <td><%= game.title %></td>
+    <td><%= game.description %></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Game', new_game_path %>

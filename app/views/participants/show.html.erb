@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Master event:</b>
+  <%= @participant.master_event_id %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @participant.team_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>

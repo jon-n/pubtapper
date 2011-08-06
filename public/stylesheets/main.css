@@ -1,0 +1,52 @@
+body {
+	background-color: #B5FF6B;
+	font-family: "Helvetica",sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: "Helvetica",sans-serif;
+}
+
+h1 {
+	font-weight:bold;
+	font-size:5em;
+	
+}
+
+h1 a, h1 a:hover, h1 a:visited, h1 a:active {
+	
+	color:black;
+	text-decoration:none;
+}
+
+
+/* formatting for logo */
+.logo a, .logo a:hover {
+	font-weight:bold;
+	font-size:6em;
+	margin-top:.5em;
+	margin-bottom:.75em;
+	text-decoration:none;
+	line-height: 1em;
+	background-color:#DEFFBD;
+	color:black;
+}
+
+#mainbox {
+
+	background-color: #DEFFBD;
+}
+
+#menubar a {
+
+	text-decoration:none;
+	font-family: "Helvetica",sans-serif;
+	font-weight:bold;
+	font-size:1.2em;
+	margin-right:0.5em;
+	/* button format shit */
+	background: black;
+	color:white;
+	border-radius:0.7em;
+	padding:.5em;
+}
