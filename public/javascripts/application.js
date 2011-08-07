@@ -102,13 +102,13 @@ $(document).ready(function() {
 		
 		// construct infowindow content
 		
-		var createdate = new Date(game.created_at);
+		//var createdate = new Date(game.created_at);
 		//createdate.format("m/dd/yy");
 		
 		var contentstring = 
-			'<div class="infowindow-content"><a href="/games/' + game.id + '"><b>' + game.title + '</b></a><br />' + game.venue.address +
+			'<div class="infowindow-content"><a href="/games/' + game.id + '"><b>' + game.venue.name + '</b></a><br />'  + game.title + '</b></a><br />' + game.venue.address +
 			//'<br />Added: ' + createdate.getDate();
-			'<br />Added: ' + $.datepicker.formatDate('m/dd/yy',createdate) + '</div>'
+			'<br />' + game.date + ' 7:00PM<br /><span class="promobox"><i>promotions:</i><br />$2 Pints for Pubtapper customers!  Come on down! </span><br /><span class="infowindowbutton">Share</span> <span class="infowindowbutton">I\'m Going!</span>' + '</div>'
 			;
 		
 		//var image = 'mlb_icon.gif';

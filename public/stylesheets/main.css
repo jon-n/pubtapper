@@ -56,3 +56,32 @@ h1 a, h1 a:hover, h1 a:visited, h1 a:active {
 	border-radius:0.7em;
 	padding:.5em;
 }
+
+/* MAP SHIT */
+
+.promobox {
+	display:block;
+	background:#FEFF85;
+	padding:0.5em;
+}
+
+.infowindowbutton {
+	text-decoration:none;
+	font-family: "Helvetica",sans-serif;
+	font-size:1em;
+	line-height:1em;
+	margin-right:0.5em;
+	/* button format shit */
+	background: black;
+	color:white;
+	border-radius:0.4em;
+	padding:.5em;
+}
+
+.infowindow-content {
+	display:block;
+	overflow:hidden;
+	width:200px;
+	height:200px;
+	font-size:1.2em;
+}
