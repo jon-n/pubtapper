@@ -4,7 +4,7 @@ body {
 }
 
 h1, h2, h3 {
-	font-family: "Helvetica",sans-serif;
+	font-family: "Helvetica",sans-serif; 
 }
 
 h1 {
@@ -19,11 +19,11 @@ h1 a, h1 a:hover, h1 a:visited, h1 a:active {
 	text-decoration:none;
 }
 
-
 /* formatting for logo */
 .logo a, .logo a:hover {
+	font-family: "octin-sports","Helvetica",sans-serif;
 	font-weight:bold;
-	font-size:6em;
+	font-size:7em;
 	margin-top:.5em;
 	margin-bottom:.75em;
 	text-decoration:none;
