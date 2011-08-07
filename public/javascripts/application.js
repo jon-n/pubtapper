@@ -43,7 +43,7 @@ $(document).ready(function() {
 				
 				if (json.length > 0) {
 					/*
-					latlng2 = new google.maps.LatLng(json[0].place.latitude, json[0].place.longitude);
+					latlng2 = new google.maps.LatLng(json[0].game.venue.latitude, json[0].game.venue.longitude);
 				
 					map.setCenter(latlng2);
 					*/
@@ -52,16 +52,16 @@ $(document).ready(function() {
 					for (i=0; i < json.length; i++) {
 					
 						if (mapcenter == false) {
-							if (json[i].place.latitude  && json[i].place.longitude && json[i].place.latitude != 0 && json[i].place.longitude != 0) {
-								latlng2 = new google.maps.LatLng(json[i].place.latitude, json[i].place.longitude);
+							if (json[i].game.venue.latitude  && json[i].game.venue.longitude && json[i].game.venue.latitude != 0 && json[i].game.venue.longitude != 0) {
+								latlng2 = new google.maps.LatLng(json[i].game.venue.latitude, json[i].game.venue.longitude);
 								map.setCenter(latlng2);
 								mapcenter = true;
 							}
 						}
 					
-						var listitem = json[i].place;
+						var game = json[i].game;
 						
-						addPlace(listitem);
+						addPlace(game);
 						
 					}		
 				}
@@ -69,6 +69,40 @@ $(document).ready(function() {
 			dataType: "json",
 			cache: false
 		});
+	}
+	
+	function addPlace(game) {
+		var latlng = new google.maps.LatLng(game.venue.latitude,game.venue.longitude);
+		
+		// construct infowindow content
+		
+		var createdate = new Date(game.created_at);
+		//createdate.format("m/dd/yy");
+		
+		var contentstring = 
+			'<div class="infowindow-content"><a href="/games/' + game.id + '"><b>' + game.title + '</b></a><br />' + game.venue.address +
+			//'<br />Added: ' + createdate.getDate();
+			'<br />Added: ' + $.datepicker.formatDate('m/dd/yy',createdate) + '</div>'
+			;
+			
+		var marker = new google.maps.Marker({
+			position: latlng,
+			map:map,
+			content: contentstring
+			
+		});
+		
+		// add marker to marker array
+		markersArray.push(marker);
+		
+		/* construct infowindow */
+		
+		google.maps.event.addListener(marker,'click',function() {
+			infowindow.setContent(this.content);
+			infowindow.open(map,this);
+		});
+		
+		
 	}
 });
 

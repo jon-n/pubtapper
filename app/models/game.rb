@@ -6,4 +6,5 @@ class Game < ActiveRecord::Base
 	def as_json(options={})
 		super(:include => [:venue])
 	end
+	
 end
