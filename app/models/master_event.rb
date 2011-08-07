@@ -6,5 +6,6 @@ class MasterEvent < ActiveRecord::Base
 	has_many :teams, :through => :participants
 	# games are the sub-events
 	has_many :games
+	has_many :venues, :through => :games
 	
 end

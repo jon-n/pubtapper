@@ -28,9 +28,10 @@
     <td><%= game.sport_id %></td>
     <td><%= game.title %></td>
     <td><%= game.description %></td>
-    <td><%= link_to 'Show', game %></td>
-    <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Show', game %></td>
+    <td><%= button_to 'Edit', edit_game_path(game) %></td>
+    <td><%= button_to 'Delete', game, :confirm => 'Are you sure?', :method => :delete %></td>
+
   </tr>
 <% end %>
 </table>

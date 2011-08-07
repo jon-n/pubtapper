@@ -18,9 +18,9 @@
     <td><%= master_event.date %></td>
     <td><%= master_event.sport_id %></td>
     <td><%= master_event.description %></td>
-    <td><%= link_to 'Show', master_event %></td>
-    <td><%= link_to 'Edit', edit_master_event_path(master_event) %></td>
-    <td><%= link_to 'Destroy', master_event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Show', master_event %></td>
+    <td><%= button_to 'Edit', edit_master_event_path(master_event) %></td>
+    <td><%= button_to 'Destroy', master_event, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

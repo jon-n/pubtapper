@@ -50,6 +50,28 @@
   <%= @venue.telephone %>
 </p>
 
+<b> Add a Local Event </b>
+
+<!-- create the game -->
+
+<%= form_tag(:controller => 'games', :action => 'create') do %>
+
+<%= label_tag 'Event title' %><br />
+<%= text_field_tag 'game[title]' %><br />
+
+<%= label_tag 'Description' %><br />
+<%= text_area_tag 'game[description]' %><br />
+
+<%= label_tag 'Date' %><br />
+<%= date_select('game','date') %><br />
+
+<%= label_tag 'Time' %><br />
+<%= time_select ('game','time') %><br />
+<%= hidden_field_tag 'game[venue_id]', @venue.id %>
+
+<%= submit_tag 'Submit' %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>

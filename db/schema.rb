@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807001258) do
+ActiveRecord::Schema.define(:version => 20110807044514) do
 
   create_table "games", :force => true do |t|
     t.date     "date"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110807001258) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "master_event_id"
   end
 
   create_table "master_events", :force => true do |t|

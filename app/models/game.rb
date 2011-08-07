@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
 
-	has_one :master_event
-	has_one :venue
+	belongs_to :master_event
+	belongs_to :venue
 	
 end
