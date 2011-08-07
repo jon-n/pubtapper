@@ -10,9 +10,9 @@ $(document).ready(function() {
 	if ($('#map_canvas').length) {
 
 		/* CREATE THE MAP */
-		var latlng = new google.maps.LatLng(37.44498, -122.161655);
+		var latlng = new google.maps.LatLng(37.444694, -122.16278);
 		var myOptions = {
-			  zoom: 16,
+			  zoom: 17,
 			  center: latlng,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP,
 			  mapTypeControlOptions: {
@@ -40,6 +40,8 @@ $(document).ready(function() {
 		
 		// use direct ajax instead of jQuery getJSON method so we can tell it not to cache the json
 		// json caching causes problems in Chrome/FF when going back to the page (renders cached json instead)
+		
+		
 		$.ajax({
 			type: "GET",
 			url: window.location.href,
@@ -51,7 +53,8 @@ $(document).ready(function() {
 				
 					map.setCenter(latlng2);
 					*/
-					var mapcenter = false;
+					
+					var mapcenter = true;
 					
 					for (i=0; i < json.length; i++) {
 					
