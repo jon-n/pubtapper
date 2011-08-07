@@ -41,6 +41,7 @@ h1 a, h1 a:hover, h1 a:visited, h1 a:active {
 	background-color: #DEFFBD;
 	padding-top:1em;
 	margin-top:2em;
+	border-radius:0.7em;
 }
 
 #menubar a {
@@ -53,7 +54,7 @@ h1 a, h1 a:hover, h1 a:visited, h1 a:active {
 	/* button format shit */
 	background: black;
 	color:white;
-	border-radius:0.7em;
+	border-radius:1em;
 	padding:.5em;
 }
 
