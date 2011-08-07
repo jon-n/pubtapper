@@ -10,9 +10,9 @@ $(document).ready(function() {
 	if ($('#map_canvas').length) {
 
 		/* CREATE THE MAP */
-		var latlng = new google.maps.LatLng(37.424397, -122.141017);
+		var latlng = new google.maps.LatLng(37.44498, -122.161655);
 		var myOptions = {
-			  zoom: 12,
+			  zoom: 16,
 			  center: latlng,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP,
 			  mapTypeControlOptions: {
@@ -31,6 +31,10 @@ $(document).ready(function() {
 			content: "loading...",
 			maxWidth:200
 		});
+		
+		// add current location
+		
+		addCurrentLocation();
 		
 		/* GET STUFF TO PLOT ON THE MAP */
 		
@@ -84,12 +88,17 @@ $(document).ready(function() {
 			//'<br />Added: ' + createdate.getDate();
 			'<br />Added: ' + $.datepicker.formatDate('m/dd/yy',createdate) + '</div>'
 			;
-			
+		
+		rand = Math.random();
+		
+		//var image = 'mlb_icon.gif';
+		var image = 'baseballsmall.png';
+		
 		var marker = new google.maps.Marker({
 			position: latlng,
 			map:map,
-			content: contentstring
-			
+			content: contentstring,
+			icon:image
 		});
 		
 		// add marker to marker array
@@ -104,6 +113,35 @@ $(document).ready(function() {
 		
 		
 	}
+	
+	function addCurrentLocation() {
+		var latlng = new google.maps.LatLng(37.444694, -122.16278);
+		
+		// construct infowindow content
+		
+		//var image = 'mlb_icon.gif';
+		var image = 'staricon1.png';
+		
+		var marker = new google.maps.Marker({
+			position: latlng,
+			map:map,
+			icon:image
+		});
+		
+		// add marker to marker array
+		markersArray.push(marker);
+		
+		/* construct infowindow */
+		
+		google.maps.event.addListener(marker,'click',function() {
+			infowindow.setContent(this.content);
+			infowindow.open(map,this);
+		});
+		
+		
+	}
+	
+	
 });
 
 /* UNLOAD GOOGLE MAP */

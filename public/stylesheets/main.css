@@ -1,5 +1,6 @@
 body {
-	background-color: #B5FF6B;
+	/*background-color: #B5FF6B;*/
+	background-image:url('/barbackground.jpg');
 	font-family: "Helvetica",sans-serif;
 }
 
@@ -33,14 +34,13 @@ h1 a, h1 a:hover, h1 a:visited, h1 a:active {
 }
 
 #container {
-
 }
 
 #mainbox {
 
 	background-color: #DEFFBD;
-	margin:0 auto;
 	padding-top:1em;
+	margin-top:2em;
 }
 
 #menubar a {
