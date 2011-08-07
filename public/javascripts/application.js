@@ -16,7 +16,8 @@ $(document).ready(function() {
 			  center: latlng,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP,
 			  mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+				mapTypeIds: [google.maps.MapTypeId.ROADMAP,'pubtapper']
 				},
 			  scrollwheel: false,
 			  zoomControl: true,
@@ -26,6 +27,24 @@ $(document).ready(function() {
 			};
 		
 		map = new  google.maps.Map(document.getElementById('map_canvas'),myOptions);
+		
+		var steez = [
+		  {
+			featureType: "all",
+			elementType: "all",
+			stylers: [
+			]
+		  }
+		];
+		
+		var mapSteezOptions = {
+			name: "PubTap"
+		}
+		
+		var pubMapType = new google.maps.StyledMapType(steez,mapSteezOptions);
+		
+		map.mapTypes.set('pubtapper',pubMapType);
+		map.setMapTypeId('pubtapper');
 		
 		infowindow = new google.maps.InfoWindow({
 			content: "loading...",
@@ -91,8 +110,6 @@ $(document).ready(function() {
 			//'<br />Added: ' + createdate.getDate();
 			'<br />Added: ' + $.datepicker.formatDate('m/dd/yy',createdate) + '</div>'
 			;
-		
-		rand = Math.random();
 		
 		//var image = 'mlb_icon.gif';
 		var image = 'baseballsmall.png';
