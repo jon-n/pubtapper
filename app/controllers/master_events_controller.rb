@@ -15,6 +15,8 @@ class MasterEventsController < ApplicationController
   def show
     @master_event = MasterEvent.find(params[:id])
 
+	@teams = Team.all
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @master_event }

@@ -20,6 +20,27 @@
   <%= @master_event.description %>
 </p>
 
+<b>ADMIN TOOLS</b><br />
+<!-- add teams to the event with form -->
+<b> Add Teams to this Event: </b>
+<%= form_tag(:controller => 'participants', :action => 'create') do %>
+<%= select("participant","team_id", Team.all.collect {|t| [t.name, t.id]}) %>
+<%= hidden_field_tag 'participant[master_event_id])', @master_event.id %>
+<%= submit_tag 'Submit' %>
+<% end %>
+
+<b> Add a Local Event </b>
+
+<!-- create the game -->
+
+<%= form_tag(:controller => 'games', :action => 'create') do %>
+
+
+<%= submit_tag 'Submit' %>
+<% end %>
+
+<br />
+<br />
 
 <%= link_to 'Edit', edit_master_event_path(@master_event) %> |
 <%= link_to 'Back', master_events_path %>

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+  	<%= f.label :title %><br />
+  	<%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
     <%= f.label :time %><br />
     <%= f.time_select :time %>
   </div>
@@ -23,6 +28,7 @@
     <%= f.label :sport_id %><br />
     <%= f.text_field :sport_id %>
   </div>
+  
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
@@ -30,4 +36,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>

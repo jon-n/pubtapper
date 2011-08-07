@@ -42,6 +42,11 @@ class ParticipantsController < ApplicationController
   def create
     @participant = Participant.new(params[:participant])
 
+	#if !params[:master_event_id].blank? && !params[:team_id].blank?
+	#@participant.master_event_id = MasterEvent.find_by_id(params[:master_event_id])
+	#@participant.team_id = Team.find_by_id(params[:team_id])
+	#end
+	
     respond_to do |format|
       if @participant.save
         format.html { redirect_to(@participant, :notice => 'Participant was successfully created.') }
