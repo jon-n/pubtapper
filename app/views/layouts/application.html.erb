@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Pubtapper</title>
-  <%= stylesheet_link_tag :all %>
-  
   <%= csrf_meta_tag %>
   	<!-- JQUERY -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
@@ -21,25 +19,26 @@
   	<%= stylesheet_link_tag "scaffold" %>
 	<%= stylesheet_link_tag "main" %>
   	<%= javascript_include_tag 'rails', 'application' %>
-	
 </head>
 <body>
-<div>
-	<div class="span-22 last" id="mainbox">
-	
-	<!-- logo section -->
-	<div class="span-22" last">
-	<div class="logo"><%= link_to "PubTapper.", root_path %></div>
-	<h3 style="margin-top:1em;">Find the best place to watch your team.</h3>
-	</div>
-	<div class="span-22" last" id="menubar" style="margin-bottom:2em;">
-	<%= link_to "GAMES", games_path %>
-	<%= link_to "MY FEED" %>
-	<%= link_to "TEAMS", teams_path %>
-	<%= link_to "VENUES", venues_path %>
-	<%= link_to "ADMIN", master_events_path %>
-	</div>
-	<%= yield %>
+<div class="prepend-1" id="container">
+	<div>
+		<div class="prepend-1 span-23 last" id="mainbox">
+			<!-- logo section -->
+			<div class="span-22" last">
+				<div class="logo"><%= link_to "PubTapper.", root_path %></div>
+			<h3 style="margin-top:1em;">Find the best place to watch your team.</h3>
+			</div>
+			<div class="span-22" last" id="menubar" style="margin-bottom:2em;">
+			<%= link_to "GAMES", games_path %>
+			<%= link_to "THE FEED" %>
+			<%= link_to "TEAMS", teams_path %>
+			<%= link_to "VENUES", venues_path %>
+			<%= link_to "ADMIN", master_events_path %>
+			</div>
+		
+			<%= yield %>
+		</div>
 	</div>
 </div>
 </body>

@@ -59,8 +59,10 @@
 <%= label_tag 'Event title' %><br />
 <%= text_field_tag 'game[title]' %><br />
 
+<%= select("game","master_event_id", MasterEvent.all.collect {|t| [t.title, t.id]}) %><br />
+
 <%= label_tag 'Description' %><br />
-<%= text_area_tag 'game[description]' %><br />
+<%= text_field_tag 'game[description]' %><br />
 
 <%= label_tag 'Date' %><br />
 <%= date_select('game','date') %><br />
@@ -68,6 +70,7 @@
 <%= label_tag 'Time' %><br />
 <%= time_select('game','time') %><br />
 <%= hidden_field_tag 'game[venue_id]', @venue.id %>
+
 
 <%= submit_tag 'Submit' %>
 <% end %>
